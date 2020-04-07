@@ -1,0 +1,23 @@
+{% extends  "profile/profile_base.html" %}
+{% load static %}
+{% block title %}Анализы{% endblock %}
+{% block profile_content %}
+<div>
+        {% if not analyse %}
+            <p>Вы еще не сдавали анализы</p>
+        {% else %}
+        <h3>Анализы</h3>
+        {% for item in analyse %}
+            <h2>Дата: {{item.date}}</h2>
+            <p>Название: {{item.name}}</p>
+            <p>Лаборатория: {{item.laboratory}}</p>
+            <p>Результат: {{item.result}}</p>
+            <p>Приоритет: {{item.priority}}</p>
+            {% if item.doctor %}
+                <p>Врач: {{item.doctor}}</p>
+            {% endif %}
+            <p>Лаборант: {{item.assistent}}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

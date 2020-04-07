@@ -1,0 +1,20 @@
+{% extends  "profile/profile_base.html" %}
+{% load static %}
+{% block title %}Пациент{% endblock %}
+{% block profile_content %}
+    <div>
+        {% if not user.patient %}
+            <p>У вас не создан Пациент. Обратитесь в регистратуру</p>
+        {% else %}
+        <h3>Пациент</h3>
+        <p>Имя: {{user.patient.name}}</p>
+        <p>Фамилия: {{user.patient.surname}}</p>
+        <p>Отчество: {{user.patient.second_name}}</p>
+        <p>Пол: {{user.patient.gender}}</p>
+        <p>Телефон: {{user.patient.telephone}}</p>
+        <p>Адрес: {{user.patient.address}}</p>
+        <p>Дата рождения: {{user.patient.birthday}}</p>
+        <p>Группа крови: {{user.patient.blood_group}}</p>
+        {% endif %}
+    </div>
+{% endblock %}

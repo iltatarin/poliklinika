@@ -1,0 +1,16 @@
+{% extends  "profile/profile_base.html" %}
+{% load static %}
+{% block title %}Амбулаторная карта{% endblock %}
+{% block profile_content %}
+<div>
+        {% if not user.patient.out_patient_card %}
+            <p>Вы еще не создавали амбулаторную карту. Обратитесь в регистратуру.</p>
+        {% else %}
+        <h3>Амбулаторная карта</h3>
+        <p>Номер страхового полиса: {{user.patient.out_patient_card.number_police}}</p>
+        <p>Паспортные данные: {{user.patient.out_patient_card.passport}}</p>
+        <p>Страховая компания: {{user.patient.out_patient_card.company}}</p>
+        <p>Записи: {{user.patient.out_patient_card.record}}</p>
+        {% endif %}
+    </div>
+{% endblock %}

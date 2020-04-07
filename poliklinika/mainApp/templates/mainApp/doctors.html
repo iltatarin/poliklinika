@@ -1,0 +1,121 @@
+{% extends  "baseLogOut.html" %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block information %}
+
+<script src="{% static 'mainApp/js/jquery-3.4.1.min.js' %}"></script>
+            <div> 
+                <div id="choice_doc" style="float: left; width:300px;">
+                <h3>Врачи</h3>
+                <ul>
+                    <li><button id="btn1">Невропатолог</button></li>
+                    <li><button id="btn2">Андролог</button></li>
+                    <li><button id="btn3">Анестезиолог</button></li>
+                    <li><button id="btn4">Венеролог</button></li>
+                    <li><button id="btn5">Гастроэнтеролог</button></li>
+                    <li><button id="btn6">Гинеколог</button></li>
+                    <li><button id="btn7">Кардиолог</button></li>
+                    <li><button id="btn8">Логопед</button></li>
+                    <li><button id="btn9">Маммолог</button></li>
+                    <li><button id="btn10">Невролог</button></li>
+                    <li><button id="btn11">Нейрохирург</button></li>
+                    <li><button id="btn12">Оториноларинголог</button></li>
+                    <li><button id="btn13">Офтальмолог</button></li>
+                    <li><button id="btn14">Педиатр</button></li>
+                    <li><button id="btn15">Проктолог</button></li>
+                    <li><button id="btn16">Терапевт</button></li>
+                    <li><button id="btn17">Уролог</button></li>
+                    <li><button id="btn18">Хирург</button></li>
+                    <li><button id="btn19">Эндокринолог</button></li>
+                </ul>
+            </div>
+            <div id="doctor_people">
+                    <div id="info">{% if not doc_mammol %}<h1>Маммологов нет!</h1>{%else%} {% for d in doc_mammol %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>
+            </div>
+        </div>
+            <div id="app">
+                    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+                    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+            </div>
+            <script type="text/javascript">
+                $(function(){
+                    $("#btn1").click(function(){ 
+                        $("#info").html("<div>{% if not doc_nevrop %}<h1>Невропатологов нет!</h1>{%else%} {% for d in doc_nevrop %}<a href='#'><img src='{% static d.photo %}'/></a><p><a href='#'>{{d.major}}</a></p>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn2").click(function(){ 
+                        $("#info").html("<div>{% if not doc_androl %}<h1>Андрологов нет!</h1>{%else%} {% for d in doc_androl %}<img src='{% static d.photo %}'/><p><a href='#'>{{d.major}}</a></p>{%endfor%}{%endif%}</div>")
+
+                    });
+                    $("#btn3").click(function(){ 
+                        $("#info").html("<div>{% if not doc_aneste %}<h1>Анестезиологов нет!</h1>{%else%} {% for d in doc_aneste %}<p>{{d.surname}} {{d.name}} {{father_name}}</p><a href='#'><img src='{% static d.photo %}'/></a>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn4").click(function(){ 
+                        $("#info").html("<div>{% if not doc_venero %}<h1>Венерологов нет!</h1>{%else%} {% for d in doc_venero %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn5").click(function(){ 
+                        $("#info").html("<div>{% if not doc_gastro %}<h1>Гастроэнтерологов нет!</h1>{%else%} {% for d in doc_gastro %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn6").click(function(){ 
+                        $("#info").html("<div>{% if not doc_gineko%}<h1>Гинекологов нет!</h1>{%else%} {% for d in doc_gineko %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn7").click(function(){ 
+                        $("#info").html("<div>{% if not doc_kardio %}<h1>Кардиологов нет!</h1>{%else%} {% for d in doc_kardio %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn8").click(function(){ 
+                        $("#info").html("<div>{% if not doc_logope %}<h1>Логопедов нет!</h1>{%else%} {% for d in doc_logope %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn9").click(function(){ 
+                        $("#info").html("<div>{% if not doc_mammol %}<h1>Маммологов нет!</h1>{%else%} {% for d in doc_mammol %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn10").click(function(){ 
+                        $("#info").html("<div>{% if not doc_nevrol %}<h1>Неврологов нет!</h1>{%else%} {% for d in doc_nevrol %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn11").click(function(){ 
+                        $("#info").html("<div>{% if not doc_neuroh %}<h1>Нейрохирургов нет!</h1>{%else%} {% for d in doc_neuroh %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn12").click(function(){ 
+                        $("#info").html("<div>{% if not doc_otolor %}<h1>Отоларингологов нет!</h1>{%else%} {% for d in doc_otolor %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn13").click(function(){ 
+                        $("#info").html("<div>{% if not doc_oftalm %}<h1>Офтальмологов нет!</h1>{%else%} {% for d in doc_oftalm %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn14").click(function(){ 
+                        $("#info").html("<div>{% if not doc_pediat %}<h1>Педиатров нет!</h1>{%else%} {% for d in doc_pediat %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn15").click(function(){ 
+                        $("#info").html("<div>{% if not doc_prokto%}<h1>Проктологов нет!</h1>{%else%} {% for d in doc_prokto %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn16").click(function(){ 
+                        $("#info").html("<div>{% if not doc_terapi %}<h1>Терапевтов нет!</h1>{%else%} {% for d in doc_terapi %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn17").click(function(){ 
+                        $("#info").html("<div>{% if not doc_urolog %}<h1>Урологов нет!</h1>{%else%} {% for d in doc_urolog %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn18").click(function(){ 
+                        $("#info").html("<div>{% if not doc_hirurg %}<h1>Хирургов нет!</h1>{%else%} {% for d in doc_hirurg %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                    $("#btn19").click(function(){ 
+                        $("#info").html("<div>{% if not doc_endokr %}<h1>Эндокринологов нет!</h1>{%else%} {% for d in doc_endokr %}<h1>{{d.name}}</h1>{%endfor%} {%endif%}</div>")
+
+                    });
+                });
+                </script>
+{% endblock %}

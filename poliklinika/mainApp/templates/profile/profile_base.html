@@ -1,0 +1,20 @@
+{% extends  "baseLogOut.html" %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block information %}
+    <div>
+        <ul>
+            <li><a href="/profile/data">Личные данные</a></li>
+            <li><a href="/profile/patient">Пациент</a></li>
+            <li><a href="/profile/medcard/">Амбулаторная карта</a></li>
+            <li><a href="/profile/analyse/">Анализы</a></li>
+            <li><a href="#">Черновик</a></li>
+            <li><a href="#">Записаться на приём</a></li>
+            <li><a href="#">Обращения</a></li>
+        </ul>
+    </div>
+    <div>
+        {% block profile_content %}
+        {% endblock %}
+    </div>
+{% endblock %}
