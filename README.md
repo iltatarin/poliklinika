@@ -15,21 +15,22 @@
 6. Находимся в папке, где есть файл Makefile
 7. Выполняем команду `docker run -d --rm --name poliklinika -e POSTGRES_PASSWORD=123456 -p 35432:5432 -v $(shell pwd)/docker/postgres_data:/var/lib/postgresql/data postgres:11
 ` 
-8. Выполняем команду `make makemigrations` 
-9. Выполняем команду `make migrate` 
-10. Выполняем команду `make run-server`
+8. Выполняем команду `python poliklinika/manage.py makemigrations` 
+9. Выполняем команду `python poliklinika/manage.py migrate` 
+10. Выполняем команду `python poliklinika/manage.py runserver`
 Если всё запустилось удачно, то создаем суперпользователя
 Останавливаем сервер сочетанием клавиш `Ctrl + C`
-6. Выполняем команду `make createsuperuser`
+11. Выполняем команду `python3 poliklinika/manage.py createsuperuser`
     - Вводим логин
     - Вводим почту
     - Вводим пароль
     - Если ввели короткий пароль, то вводим `Y`
-7. Запускаем сервер заново - `make run-server`
-8. Открываем браузер и видим сайт `http://0.0.0.0:8060/`
-9. Заходим на админку
+12. Выполняем шаг 10 повторно
+13. Открываем браузер и видим сайт `http://0.0.0.0:8060/`
+14. Заходим на админку
     - Переходим по `http://0.0.0.0:8060/admin`
     - Вводим логин и пароль
+    
 ## Установка необходимых библиотек
 1. Открываем командную строку или терминал Pycharm
     - Все команды будем выполнять там
