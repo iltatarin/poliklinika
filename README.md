@@ -17,7 +17,7 @@
 ` 
 8. Выполняем команду `python poliklinika/manage.py makemigrations` 
 9. Выполняем команду `python poliklinika/manage.py migrate` 
-10. Выполняем команду `python poliklinika/manage.py runserver`
+10. Выполняем команду `python poliklinika/manage.py runserver 8060`
 Если всё запустилось удачно, то создаем суперпользователя
 Останавливаем сервер сочетанием клавиш `Ctrl + C`
 11. Выполняем команду `python3 poliklinika/manage.py createsuperuser`
