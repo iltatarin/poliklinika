@@ -6,6 +6,30 @@
 3. Устанавливаем Docker `https://runnable.com/docker/install-docker-on-windows-10`
 4. Скачиваем проект из репозитория
 
+## Установка необходимых библиотек *Windows*
+1. Открываем `Powershell` 
+2. Переходим в папку с файлами `Nastya-master`, где хранятся файлы *requirements.txt, Makefile*
+3. Создаём виртуальное окружение по команде `python -m venv env`
+4. Затем выполняем команду Windows: `.\\env\Scripts\activate`
+5. Устанавливаем библиотеки по команде  `pip install -r requirements.txt`
+6. Находимся в папке, где есть файл Makefile
+7. Выполняем команду `docker run -d --rm --name poliklinika -e POSTGRES_PASSWORD=123456 -p 35432:5432 -v $(shell pwd)/docker/postgres_data:/var/lib/postgresql/data postgres:11
+` 
+8. Выполняем команду `make makemigrations` 
+9. Выполняем команду `make migrate` 
+10. Выполняем команду `make run-server`
+Если всё запустилось удачно, то создаем суперпользователя
+Останавливаем сервер сочетанием клавиш `Ctrl + C`
+6. Выполняем команду `make createsuperuser`
+    - Вводим логин
+    - Вводим почту
+    - Вводим пароль
+    - Если ввели короткий пароль, то вводим `Y`
+7. Запускаем сервер заново - `make run-server`
+8. Открываем браузер и видим сайт `http://0.0.0.0:8060/`
+9. Заходим на админку
+    - Переходим по `http://0.0.0.0:8060/admin`
+    - Вводим логин и пароль
 ## Установка необходимых библиотек
 1. Открываем командную строку или терминал Pycharm
     - Все команды будем выполнять там
