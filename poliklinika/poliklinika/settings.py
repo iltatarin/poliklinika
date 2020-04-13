@@ -74,27 +74,27 @@ TEMPLATES = [
 WSGI_APPLICATION = 'poliklinika.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+# DATABASES = {
+#   'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'USER': os.getenv('POSTGRES_USER', 'postgres'),
+#        'PASSWORD': os.getenv('POSTGRES_PASSWORD', '123456'),
+#        'HOST': os.getenv('POSTGRES_HOST', '127.0.0.1'),
+#        'PORT': int(os.getenv('POSTGRES_PORT', '35432')),
+#        'NAME': os.getenv('POSTGRES_NAME', 'postgres')
+#    },
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'USER': os.getenv('POSTGRES_USER', 'postgres'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', '123456'),
-        'HOST': os.getenv('POSTGRES_HOST', '127.0.0.1'),
-        'PORT': int(os.getenv('POSTGRES_PORT', '35432')),
-        'NAME': os.getenv('POSTGRES_NAME', 'postgres')
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'HOST': 'localhost',
-#         'USER': 'paps_user',
-#         'PASSWORD': 'paps_user',
-#         'NAME': 'my_paps_db'
-#     }
-# }
+
 
 
 # Password validation
