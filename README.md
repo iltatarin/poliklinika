@@ -11,20 +11,19 @@
 2. Создаём виртуальное окружение по команде `python -m venv env`
 3. Затем выполняем команду Windows: `.\\env\Scripts\activate`
 4. Устанавливаем библиотеки по команде  `pip install -r requirements.txt`
-5. Находимся в папке, где есть файл Makefile
-6. Выполняем команду `python poliklinika/manage.py makemigrations` 
-7. Выполняем команду `python poliklinika/manage.py migrate` 
-8. Выполняем команду `python poliklinika/manage.py runserver 8060`
+5. Выполняем команду `python poliklinika/manage.py makemigrations` 
+6. Выполняем команду `python poliklinika/manage.py migrate` 
+7. Выполняем команду `python poliklinika/manage.py runserver 8060`
 - Если всё запустилось удачно, то создаем суперпользователя.
 - Останавливаем сервер сочетанием клавиш `Ctrl + C`.
-9. Выполняем команду `python poliklinika/manage.py createsuperuser`
+8. Выполняем команду `python poliklinika/manage.py createsuperuser`
     - Вводим логин
     - Вводим почту
     - Вводим пароль
     - Если ввели короткий пароль, то вводим `Y`
-10. Выполняем шаг 10 повторно
-11. Открываем браузер и переходим по `http://0.0.0.0:8060/`
-12. Заходим на админку
+9. Выполняем шаг 10 повторно
+10. Открываем браузер и переходим по `http://0.0.0.0:8060/`
+11. Заходим на админку
     - Переходим по `http://0.0.0.0:8060/admin`
     - Вводим логин и пароль
 #### Поздравляю, ты запустил проект
