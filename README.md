@@ -7,25 +7,24 @@
 4. Скачиваем проект из репозитория
 
 ## Установка без Docker
-1. Открываем `Powershell` 
-2. Переходим в папку с файлами `Nastya-master`, где хранятся файлы *requirements.txt, Makefile*
-3. Создаём виртуальное окружение по команде `python -m venv env`
-4. Затем выполняем команду Windows: `.\\env\Scripts\activate`
-5. Устанавливаем библиотеки по команде  `pip install -r requirements.txt`
-6. Находимся в папке, где есть файл Makefile
-7. Выполняем команду `python poliklinika/manage.py makemigrations` 
-8. Выполняем команду `python poliklinika/manage.py migrate` 
-9. Выполняем команду `python poliklinika/manage.py runserver 8060`
+1. Переходим в папку с файлами `Nastya-master`, где хранятся файлы *requirements.txt, Makefile*
+2. Создаём виртуальное окружение по команде `python -m venv env`
+3. Затем выполняем команду Windows: `.\\env\Scripts\activate`
+4. Устанавливаем библиотеки по команде  `pip install -r requirements.txt`
+5. Находимся в папке, где есть файл Makefile
+6. Выполняем команду `python poliklinika/manage.py makemigrations` 
+7. Выполняем команду `python poliklinika/manage.py migrate` 
+8. Выполняем команду `python poliklinika/manage.py runserver 8060`
 - Если всё запустилось удачно, то создаем суперпользователя.
 - Останавливаем сервер сочетанием клавиш `Ctrl + C`.
-10. Выполняем команду `python poliklinika/manage.py createsuperuser`
+9. Выполняем команду `python poliklinika/manage.py createsuperuser`
     - Вводим логин
     - Вводим почту
     - Вводим пароль
     - Если ввели короткий пароль, то вводим `Y`
-11. Выполняем шаг 10 повторно
-12. Открываем браузер и переходим по `http://0.0.0.0:8060/`
-13. Заходим на админку
+10. Выполняем шаг 10 повторно
+11. Открываем браузер и переходим по `http://0.0.0.0:8060/`
+12. Заходим на админку
     - Переходим по `http://0.0.0.0:8060/admin`
     - Вводим логин и пароль
 #### Поздравляю, ты запустил проект
